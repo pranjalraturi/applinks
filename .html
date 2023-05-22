@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Other Links</title>
+  <style>
+    body {
+      font-family: cursive, Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-image: url('https://images.alphacoders.com/605/605592.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    
+    h1 {
+      color: #fff;
+      text-align: center;
+      margin-bottom: 10px;
+      font-family: cursive, Arial, sans-serif;
+    }
+    
+    h2 {
+      color: #fff;
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 20px;
+    }
+    
+    .app-link {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 15px;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.8);
+      color: #333;
+      text-decoration: none;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease;
+      width: 300px;
+    }
+    
+    .app-link:hover {
+      transform: scale(1.05);
+    }
+    
+    .app-link h3 {
+      margin: 0;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+    
+    .app-link p {
+      margin: 0;
+      color: #777;
+      font-size: 16px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>Pranjal Raturi</h1>
+  <h2>Other Links</h2>
+  
+  <div id="other-links-container">
+    <!-- The links will be dynamically added here -->
+  </div>
+  
+  <script>
+    // Define your other links
+    var otherLinks = [
+      { name: "Instagram", url: "https://www.instagram.com", description: "Capture and share the world's moments" },
+      { name: "Twitter", url: "https://www.twitter.com", description: "Discover what's happening in the world right now" },
+      { name: "WhatsApp", url: "https://www.whatsapp.com", description: "Simple. Secure. Reliable messaging" },
+      { name: "Telegram", url: "https://www.telegram.org", description: "A fast and secure messaging app" }
+    ];
+    
+    // Function to generate other links dynamically
+    function generateOtherLinks() {
+      var otherLinksContainer = document.getElementById("other-links-container");
+      
+      // Clear existing links
+      otherLinksContainer.innerHTML = "";
+      
+      // Generate new links
+      otherLinks.forEach(function(link) {
+        var linkElement = document.createElement("a");
+        linkElement.className = "app-link";
+        linkElement.href = link.url;
+        linkElement.target = "_blank";
+        
+        var titleElement = document.createElement("h3");
+        titleElement.textContent = link.name;
+        
+        var descriptionElement = document.createElement("p");
+        descriptionElement.textContent = link.description;
+        
+        linkElement.appendChild(titleElement);
+        linkElement.appendChild(descriptionElement);
+        
+        otherLinksContainer.appendChild(linkElement);
+      });
+    }
+    
+    // Call the function to generate other links
+    generateOtherLinks();
+  </script>
+</body>
+</html>
